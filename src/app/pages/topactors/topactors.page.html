@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">  
+      <ion-menu-button color="dark"></ion-menu-button>   
+    </ion-buttons>  
+    <ion-title>Popular Actors</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content 
+    pulllingIcon="arrow-dropdown"
+    refreShingspinner="circles"
+    ></ion-refresher-content>
+  </ion-refresher>
+  <div class="top__award">
+    <img class="top__award--medal" src="/assets/images/award.png" alt="">
+    <span class="top__award--text"> The 20 most popular actors <br>
+      <span class="top__award--text-small">(Based on TMDB rating)</span>
+    </span>
+  </div>
+  <div class="line"></div>
+  <ion-row class="top__element" [routerLink]="['/actor', r.id]" tappable  *ngFor="let r of popularActors; let i = index">
+    <ion-col size="4" class="top__element--img">
+      <ion-img [src]='imageUrl + r.profile_path'></ion-img>
+      <div class="top__element--rating"
+      [ngStyle]="{'background-color': r.popularity < 5 ? 'var(--ion-color-danger)' : (r.popularity >= 20 ? 'var(--ion-color-success)' : 'var(--ion-color-warning') }">
+        {{ r.popularity | number:'1.1-1' }}
+      </div>
+    </ion-col>
+    <ion-col size="8">
+      <p class="top__element--name">{{ i + 1 }}. {{ r.name }}</p>
+      <span class="top__element--best-movies">Best movies:</span>
+      <li *ngFor="let movie of r.known_for">
+          {{ movie.name || movie.original_title}}
+      </li>
+    </ion-col>
+      <div class="line"></div>
+  </ion-row>
+</ion-content>

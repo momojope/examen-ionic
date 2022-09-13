@@ -1,0 +1,62 @@
+.actor__info{
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &--icon{
+    font-size: 3rem;
+  }
+  &--name{
+    margin-top: 0;
+    padding: 0 1rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  &--birth{
+    font-style: italic;
+    font-size: 0.9rem;
+    color:rgb(163, 163, 163);
+    &--bold{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+      color: #000;
+      font-size: 1rem;
+    }
+  } 
+  &--data{
+    width: 50%;
+  }
+  &--header{
+    background-color:var(--ion-color-secondary);
+    padding: .5rem 1rem;
+    font-weight: 700;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &--bio{
+    padding: .5rem 1rem;
+  }
+  &--rating{
+    font-weight: 700;
+    color: #fff;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    padding: 0.3rem;
+  }
+  &--movies{
+    padding: 0 1rem;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

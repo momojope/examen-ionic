@@ -1,0 +1,36 @@
+.movies{
+  font-family: 'Nunito', sans-serif;
+  outline: none;
+}
+
+.image{
+  border-radius: 1rem;
+}
+
+.title{
+  font-weight: 700;
+}
+
+.release_date{
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+.image-container{
+  position: relative;
+}
+
+.rating{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.8rem;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  bottom: .8rem;
+  right: .5rem;
+  background-color: var(--ion-color-secondary);
+  color:#fff;
+}
